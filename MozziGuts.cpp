@@ -47,6 +47,8 @@ static void startSecondADCReadOnCurrentChannel();
 #  include "MozziGuts_impl_SAMD.hpp"
 #elif (IS_RP2040())
 #  include "MozziGuts_impl_RP2040.hpp"
+#elif (IS_ADAFRUIT_MACROPAD())
+#  include "MozziGuts_impl_AdafruitMacroPad.hpp"
 #elif (IS_MBED())
 #  include "MozziGuts_impl_MBED.hpp"
 #elif (IS_RENESAS())

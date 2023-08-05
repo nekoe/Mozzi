@@ -41,10 +41,16 @@
 #endif
 
 // RP2040 (Raspberry Pi Pico and friends)
-#if (defined(ARDUINO_ARCH_RP2040))
+#if (defined(ARDUINO_ARCH_RP2040) && !defined(ARDUINO_ADAFRUIT_MACROPAD_RP2040))
 #define IS_RP2040() 1
 #else
 #define IS_RP2040() 0
+#endif
+
+#if (defined(ARDUINO_ADAFRUIT_MACROPAD_RP2040))
+#define IS_ADAFRUIT_MACROPAD() 1
+#else
+#define IS_ADAFRUIT_MACROPAD() 0
 #endif
 
 // STM32 boards (libmaple based)
@@ -76,7 +82,7 @@
 #define IS_RENESAS() 0
 #endif
 
-#if (defined(__arm__) && !IS_STM32() && !IS_TEENSY3() && !IS_TEENSY4() && !IS_RP2040() && !IS_SAMD21() && !IS_MBED() && !IS_RENESAS())
+#if (defined(__arm__) && !IS_STM32() && !IS_TEENSY3() && !IS_TEENSY4() && !IS_RP2040() && !IS_ADAFRUIT_MACROPAD() && !IS_SAMD21() && !IS_MBED() && !IS_RENESAS())
 #define IS_STM32DUINO() 1
 #else
 #define IS_STM32DUINO() 0
@@ -94,7 +100,7 @@
 #define IS_ESP32() 0
 #endif
 
-#if !(IS_AVR() || IS_TEENSY3() || IS_TEENSY4() || IS_STM32() || IS_STM32DUINO() || IS_ESP8266() || IS_SAMD21() || IS_ESP32() || IS_RP2040() || IS_MBED() || IS_RENESAS())
+#if !(IS_AVR() || IS_TEENSY3() || IS_TEENSY4() || IS_STM32() || IS_STM32DUINO() || IS_ESP8266() || IS_SAMD21() || IS_ESP32() || IS_RP2040() || IS_ADAFRUIT_MACROPAD() || IS_MBED() || IS_RENESAS())
 #error Your hardware is not supported by Mozzi or not recognized. Edit hardware_defines.h to proceed.
 #endif
 
