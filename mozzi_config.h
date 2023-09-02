@@ -89,8 +89,8 @@ compile time.
 @note At the time of this writing, only MONO and STEREO are supported. The value of
       MONO is 1 and the value of STEREO is 2, so future extensions are also expected
       to set this to the number of available channels. */
-#define AUDIO_CHANNELS MONO
-//#define AUDIO_CHANNELS STEREO
+//#define AUDIO_CHANNELS MONO
+#define AUDIO_CHANNELS STEREO
 
 /** @ingroup core
 Defining this option as true in mozzi_config.h allows to completely customize the audio output, e.g. for connecting to external DACs.
