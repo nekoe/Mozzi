@@ -16,10 +16,10 @@
 
 
 #if (RP2040_AUDIO_OUT_MODE == PWM_VIA_BARE_CHIP)  
-#define AUDIO_CHANNEL_1_PIN 0
+#define AUDIO_CHANNEL_1_PIN 20
 #if (AUDIO_CHANNELS > 1)
 // Audio channel pins for stereo or HIFI must be on the same PWM slice (which is the case for the pairs (0,1), (2,3), (4,5), etc.
-#define AUDIO_CHANNEL_2_PIN 1
+#define AUDIO_CHANNEL_2_PIN 21
 #endif
 
 // The more audio bits you use, the slower the carrier frequency of the PWM signal. 11 bits yields ~ 60kHz on a 133Mhz CPU (which appears to be a reasonable compromise)
