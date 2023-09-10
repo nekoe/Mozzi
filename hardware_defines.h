@@ -42,6 +42,7 @@
 
 // RP2040 (Raspberry Pi Pico and friends)
 #if (defined(ARDUINO_ARCH_RP2040) && !defined(ARDUINO_ADAFRUIT_MACROPAD_RP2040))
+// #if (defined(ARDUINO_ARCH_RP2040))
 #define IS_RP2040() 1
 #else
 #define IS_RP2040() 0
@@ -49,6 +50,7 @@
 
 #if (defined(ARDUINO_ADAFRUIT_MACROPAD_RP2040))
 #define IS_ADAFRUIT_MACROPAD() 1
+// #define IS_ADAFRUIT_MACROPAD() 0
 #else
 #define IS_ADAFRUIT_MACROPAD() 0
 #endif
